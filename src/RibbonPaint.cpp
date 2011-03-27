@@ -29,7 +29,7 @@ void RibbonPaint::setup()
 	srandom( time(NULL) );
 	ci::Rand::randSeed( random() );
 	_perlinNoise.setSeed( sin( time( NULL ) ) * 10);
-	
+	_perlinNoise.setOctaves( 4 );
 
 
 	_alertTextDefaultDisplayTimeInFrames = 60 * 3;
@@ -92,7 +92,7 @@ void RibbonPaint::setup()
 	
 	// versioning
 	_latestVersion = 0.0f;
-	_versionNumber = 1.06f;
+	_versionNumber = 2.06f;
 //
 //	try {
 //		ci::XmlDocument doc( loadUrlStream( "http://www.ribbonpaint.com/currentVersionNumber.xml" ) );
@@ -312,7 +312,7 @@ void RibbonPaint::saveOutBrushImageAndParameters()
 	// Create a string with the data you want to write.
 	std::string myString = "Ribbon Paint(c) by Mario Gonzalez (onedayitwillmake.com) of Whale Island Games\n-\n";
 	myString += "Parameters Used: [" + toString(_bristleCount) + "," + toString(_brushRadius) + "," + toString(_filamentSpacing) + "," + toString(_filamentCount);
-	myString += ",0." + toString(round(_canvasFrictionMin*100)); 
+	myString += ",0." + toString(round(_canvasFrictionMin*100));
 	myString += ",0." + toString(round(_canvasFrictionMax*100));
 	myString += ",0." + toString(round(_gravity * 100));
  	myString += "," + toString(_alphaWhenDrawing);
@@ -504,9 +504,9 @@ void RibbonPaint::update()
 	float nY = (getWindowCenter().y) * 0.01f;
 	float nZ = getElapsedFrames() * 0.003f;
 
-	float mNoise = _perlinNoise.fBm( nX, nY, nZ );
+	float mNoise = _perlinNoise.noise( nX, nY, nZ );
 
-	float angle = mNoise * 8.0f;
+	float angle = mNoise * M_PI;
 	 
 	
 	ci::Vec2f mousePosition;
@@ -516,7 +516,7 @@ void RibbonPaint::update()
 	{
 		float yRange = getWindowHeight() * 0.4;
 		ci::Vec2f noiseVector( cosf( angle ) * 100 + (_mousePosition.x*0.1) , sinf( angle ) * yRange + (_mousePosition.y*0.1));
-		mousePosition = ci::Vec2f((getWindowWidth()*0.8) + noiseVector.x, getWindowCenter().y + noiseVector.y );
+		mousePosition =
 	} else {
 		mousePosition = _mousePosition;
 	}

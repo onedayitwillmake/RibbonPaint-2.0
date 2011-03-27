@@ -144,11 +144,6 @@ public:
 #endif
 };
 
-#pragma mark Help Functions
-float round(float d)
-{
-	return floor(d + 0.5);
-}
 
 inline void HSVtoRGB( float *r, float *g, float *b, float h, float s, float v )
 {
