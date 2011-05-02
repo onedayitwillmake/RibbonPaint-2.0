@@ -6,4 +6,5 @@ It is inspired by some young kids I saw playing outside with long ribbons during
 ![RibbonPaint](http://www.ribbonpaint.com/04904420264_baf5ab3dcd_b.jpg "RibbonPaint")
 ![RibbonPaint](http://www.ribbonpaint.com/tetris.png "RibbonPaint")
 ![RibbonPaint](http://www.ribbonpaint.com/Alphabet/l.png "RibbonPaint")
-
+![RibbonPaint](http://www.ribbonpaint.com/Alphabet/vspacing.jpg "RibbonPaint")
+![RibbonPaint](http://www.ribbonpaint.com/colordropgravity.png "RibbonPaint")
