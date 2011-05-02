@@ -32,10 +32,11 @@ void Segment::next()
 
 void Segment::setVector()
 {
+        float damping = 0.981;
 	if(prevX && prevY) 
 	{
-		vx += ((x - prevX) - vx) * 0.98f;
-		vy += ((y - prevY) - vy) * 0.98f;
+		vx += ((x - prevX) - vx) * damping;
+		vy += ((y - prevY) - vy) * damping;
 	}
 	prevX = x;
 	prevY = y;
