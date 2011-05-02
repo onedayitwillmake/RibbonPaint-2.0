@@ -1,3 +1,5 @@
+RibbonPaint is a free painting application for OSX written in C++
+
 The idea behind RibbonPaint it is to create a paint brush that could not exist in real life.
 Based on the motion of a ribbon, a small hand motion is exaggerated as the energy moves outward.
 
