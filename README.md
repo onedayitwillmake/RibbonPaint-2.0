@@ -5,6 +5,7 @@ Based on the motion of a ribbon, a small hand motion is exaggerated as the energ
 
 It is inspired by some young kids I saw playing outside with long ribbons during the summer.
 
+![RibbonPaint](https://github.com/onedayitwillmake/RibbonPaint-2.0/raw/master/resources/splash.png "RibbonPaint")
 ![RibbonPaint](http://www.ribbonpaint.com/04904420264_baf5ab3dcd_b.jpg "RibbonPaint")
 ![RibbonPaint](http://www.ribbonpaint.com/tetris.png "RibbonPaint")
 ![RibbonPaint](http://www.ribbonpaint.com/Alphabet/l.png "RibbonPaint")
