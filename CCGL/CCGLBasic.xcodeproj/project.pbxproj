@@ -31,7 +31,7 @@
 		EDC5DDED143512AF00F09107 /* libcinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC5DDEB143512AF00F09107 /* libcinder.a */; };
 		EDC5DE111435181C00F09107 /* FadeOutText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDC5DE0D1435181C00F09107 /* FadeOutText.cpp */; };
 		EDC5DE121435181C00F09107 /* IKLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDC5DE0E1435181C00F09107 /* IKLine.cpp */; };
-		EDC5DE131435181C00F09107 /* RibbonPaint.mm in Sources */ = {isa = PBXBuildFile; fileRef = EDC5DE0F1435181C00F09107 /* RibbonPaint.mm */; };
+		EDC5DE131435181C00F09107 /* RibbonPaint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDC5DE0F1435181C00F09107 /* RibbonPaint.cpp */; };
 		EDC5DE141435181C00F09107 /* Segment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDC5DE101435181C00F09107 /* Segment.cpp */; };
 		EDC5DE19143559A000F09107 /* instructions_black.png in Resources */ = {isa = PBXBuildFile; fileRef = EDC5DE16143559A000F09107 /* instructions_black.png */; };
 		EDC5DE1A143559A000F09107 /* instructions_white.png in Resources */ = {isa = PBXBuildFile; fileRef = EDC5DE17143559A000F09107 /* instructions_white.png */; };
@@ -73,7 +73,7 @@
 		EDC5DE0C1435181500F09107 /* Segment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Segment.h; path = ../include/Segment.h; sourceTree = "<group>"; };
 		EDC5DE0D1435181C00F09107 /* FadeOutText.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FadeOutText.cpp; path = ../src/FadeOutText.cpp; sourceTree = "<group>"; };
 		EDC5DE0E1435181C00F09107 /* IKLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IKLine.cpp; path = ../src/IKLine.cpp; sourceTree = "<group>"; };
-		EDC5DE0F1435181C00F09107 /* RibbonPaint.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RibbonPaint.mm; path = ../src/RibbonPaint.mm; sourceTree = "<group>"; };
+		EDC5DE0F1435181C00F09107 /* RibbonPaint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = RibbonPaint.cpp; path = ../src/RibbonPaint.cpp; sourceTree = "<group>"; };
 		EDC5DE101435181C00F09107 /* Segment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Segment.cpp; path = ../src/Segment.cpp; sourceTree = "<group>"; };
 		EDC5DE16143559A000F09107 /* instructions_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = instructions_black.png; path = ../resources/instructions_black.png; sourceTree = "<group>"; };
 		EDC5DE17143559A000F09107 /* instructions_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = instructions_white.png; path = ../resources/instructions_white.png; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 			children = (
 				EDC5DE0D1435181C00F09107 /* FadeOutText.cpp */,
 				EDC5DE0E1435181C00F09107 /* IKLine.cpp */,
-				EDC5DE0F1435181C00F09107 /* RibbonPaint.mm */,
+				EDC5DE0F1435181C00F09107 /* RibbonPaint.cpp */,
 				EDC5DE101435181C00F09107 /* Segment.cpp */,
 				EDC5DE081435181500F09107 /* Easing.h */,
 				EDC5DE091435181500F09107 /* IKLine.h */,
@@ -295,7 +295,7 @@
 				E0C5A101140AEE7E00453E04 /* CCGLView.mm in Sources */,
 				EDC5DE111435181C00F09107 /* FadeOutText.cpp in Sources */,
 				EDC5DE121435181C00F09107 /* IKLine.cpp in Sources */,
-				EDC5DE131435181C00F09107 /* RibbonPaint.mm in Sources */,
+				EDC5DE131435181C00F09107 /* RibbonPaint.cpp in Sources */,
 				EDC5DE141435181C00F09107 /* Segment.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

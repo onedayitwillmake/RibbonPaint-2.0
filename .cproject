@@ -6,7 +6,7 @@
 		<cconfiguration id="cdt.managedbuild.toolchain.gnu.macosx.base.1873825215">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.macosx.base.1873825215" moduleId="org.eclipse.cdt.core.settings" name="Build">
 				<macros>
-					<stringMacro name="CINDER_PATH" type="VALUE_PATH_DIR" value="/Users/onedayitwillmake/GIT/LIBRARY/Cinder"/>
+					<stringMacro name="CINDER_PATH" type="VALUE_PATH_DIR" value="/Users/mariogonzalez/GIT/LIBRARY/Cinder"/>
 				</macros>
 				<externalSettings/>
 				<extensions>

@@ -1,32 +1,31 @@
+
+
 #include "cinder/app/AppBasic.h"
-#include "cinder/params/Params.h"
-#include "cinder/Font.h"
-#include "cinder/Utilities.h"
-#include "cinder/ImageIo.h"
-#include "cinder/Path2d.h"
-#include "cinder/Rand.h"
 #include "cinder/app/KeyEvent.h"
+#include "cinder/Area.h"
 #include "cinder/Camera.h"
-#include "cinder/gl/Texture.h"
-#include "cinder/Perlin.h"
-#include "cinder/Url.h"
 #include "cinder/DataSource.h"
+#include "cinder/Font.h"
+#include "cinder/gl/Texture.h"
+#include "cinder/ImageIo.h"
+#include "cinder/params/Params.h"
+#include "cinder/Path2d.h"
+#include "cinder/Perlin.h"
+#include "cinder/Rand.h"
+#include "cinder/Url.h"
+#include "cinder/Utilities.h"
 #include "cinder/Xml.h"
-
-
-// Absolute imports
-#include <vector>
-#include <boost/regex.hpp>
-#include <boost/smart_ptr.hpp>
-#include <boost/algorithm/string.hpp>
-#include <boost/algorithm/string/regex.hpp>
-#include <boost/date_time/posix_time/posix_time.hpp>
 
 // app
 #include "IKLine.h"
 #include "Resources.h"
-
-#define trace(__X__) console() << __X__ << std::endl;
+#include <boost/algorithm/string.hpp>
+#include <boost/algorithm/string/regex.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/regex.hpp>
+#include <boost/smart_ptr.hpp>
+// Absolute imports
+#include <vector>
 
 
 enum
@@ -90,6 +89,14 @@ public:
 	void updateParams();
 	void displayAlertString(std::string textToDisplay);
 	
+	ci::Area _getWindowBounds();
+	ci::Vec2f _getWindowCenter();
+	int _getWindowWidth();
+	int _getWindowHeight();
+	int _getElapsedFrames();
+	bool _getIsShiftDown();
+
+
 //	ci::params::InterfaceGl		_params;
 	ci::gl::Texture				_splashScreen;
 	ci::gl::Texture				_instructionsWhite;
