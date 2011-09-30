@@ -67,10 +67,10 @@ public:
 	// UIEvents
 	void keyDown( ci::app::KeyEvent event );
 	void keyUp( ci::app::KeyEvent event);
-	void mouseUp( ci::app::MouseEvent event );
-	void mouseDown( ci::app::MouseEvent event );
-	void mouseDrag( ci::app::MouseEvent event );
-	void mouseMove( ci::app::MouseEvent event );
+	void mouseUp( ci::Vec2f position );
+	void mouseDown( ci::Vec2f position );
+	void mouseDrag( ci::Vec2f position );
+	void mouseMove( ci::Vec2f position );
 	void fileDrop( ci::app::FileDropEvent event );
 	// Files
 	void saveOutBrushImageAndParameters();
@@ -90,7 +90,7 @@ public:
 	void updateParams();
 	void displayAlertString(std::string textToDisplay);
 	
-	ci::params::InterfaceGl		_params;
+//	ci::params::InterfaceGl		_params;
 	ci::gl::Texture				_splashScreen;
 	ci::gl::Texture				_instructionsWhite;
 	ci::gl::Texture				_instructionsBlack;
