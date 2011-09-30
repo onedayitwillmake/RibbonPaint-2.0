@@ -32,8 +32,9 @@ void RibbonPaint::prepareSettings(Settings *settings)
 
 void RibbonPaint::setup()
 {	
-	std::cout << "Setting application path: " << getAppPath() << std::endl;
-	chdir( getAppPath().c_str( ) );
+//	std::cout << "Setting application path: " << getAppPath() << std::endl;
+//	chdir( getAppPath().c_str( ) );
+	std::cout << getResourcePath() << std::endl;
 
 	srandom( time(NULL) );
 	ci::Rand::randSeed( random() );
@@ -836,8 +837,7 @@ inline void RibbonPaint::drawBezier(ci::Vec2f origin, ci::Vec2f control, ci::Vec
 	glDrawArrays(GL_LINE_STRIP, 0, segments + !_glitchSegment);
 }
 
-template <class T> inline std::string RibbonPaint::toString (const T& t)
-{
+template <class T> inline std::string RibbonPaint::toString (const T& t) {
 	std::setprecision(2);
 	return boost::lexical_cast<std::string>( t );
 }
@@ -852,10 +852,16 @@ template <class T> inline std::string RibbonPaint::toString (const T& t)
 #else
 	ci::Area RibbonPaint::_getWindowBounds() { return getWindowBounds(); }
 	ci::Vec2f RibbonPaint::_getWindowCenter() { return getWindowCenter(); }
-	int RibbonPaint::_getWindowWidth() { return getWindowHeight(); }
+	int RibbonPaint::_getWindowWidth() { return getWindowWidth(); }
 	int RibbonPaint::_getWindowHeight() { return getWindowHeight(); }
 	int RibbonPaint::_getElapsedFrames() { return getElapsedFrames(); }
 	bool RibbonPaint::_getIsShiftDown() { return false; }
+
+	// Mouse wrappers
+	void RibbonPaint::mouseDown( ci::app::MouseEvent event ) { mouseDown( event.getPos() ); }
+	void RibbonPaint::mouseMove( ci::app::MouseEvent event ) { mouseMove( event.getPos() ); }
+	void RibbonPaint::mouseDrag( ci::app::MouseEvent event ) { mouseDrag( event.getPos() ); }
+	void RibbonPaint::mouseUp( ci::app::MouseEvent event ) { mouseUp( event.getPos() ); }
 
 
 	CINDER_APP_BASIC( RibbonPaint, ci::app::RendererGl )

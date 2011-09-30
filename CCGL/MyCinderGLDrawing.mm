@@ -10,6 +10,7 @@
 //
 
 #import "MyCinderGLDrawing.h"
+#define __RIBBON__PAINT__XCODE__ 1
 
 @implementation MyCinderGLDrawing
 

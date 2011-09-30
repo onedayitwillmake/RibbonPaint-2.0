@@ -70,6 +70,14 @@ public:
 	void mouseDown( ci::Vec2f position );
 	void mouseDrag( ci::Vec2f position );
 	void mouseMove( ci::Vec2f position );
+
+#ifndef __RIBBON__PAINT__XCODE__
+	void mouseUp( ci::app::MouseEvent event );
+	void mouseDown( ci::app::MouseEvent event );
+	void mouseDrag( ci::app::MouseEvent event );
+	void mouseMove( ci::app::MouseEvent event );
+#endif
+
 	void fileDrop( ci::app::FileDropEvent event );
 	// Files
 	void saveOutBrushImageAndParameters();
