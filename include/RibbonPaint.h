@@ -19,6 +19,18 @@
 // app
 #include "IKLine.h"
 #include "Resources.h"
+#include "ColorStateManager.h"
+#include "IColorMode.h"
+#include "ColorModes/ColorModeAlphaBlend1.h"
+#include "ColorModes/ColorModeAlphaBlend2.h"
+#include "ColorModes/ColorModeAlphaBlend3.h"
+#include "ColorModes/ColorModeGrayscale.h"
+#include "ColorModes/ColorModeHSV.h"
+#include "ColorModes/ColorModeRGB.h"
+#include "ColorModes/ColorModeRGB2.h"
+#include "ColorModes/ColorModeRGB3.h"
+#include "ColorModes/ColorModeRGBInverse.h"
+
 #include <boost/algorithm/string.hpp>
 #include <boost/algorithm/string/regex.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
@@ -89,33 +101,27 @@ public:
 	void draw();
 	void drawIKLine(linePointer& lineToDraw);
 	void drawBezier(ci::Vec2f origin, ci::Vec2f control, ci::Vec2f destination, int segments);
-	// Colors and states
-	void toggleAdditiveBlending( bool enableAdditiveBlending );
-	void getColorMode(double inverseI, double alpha);
 	// Utils
 	template <class T> inline std::string toString(const T& t);
 	void updateParams();
 	void displayAlertString(std::string textToDisplay);
 	
+
 	ci::Area _getWindowBounds();
 	ci::Vec2f _getWindowCenter();
 	int _getWindowWidth();
 	int _getWindowHeight();
 	int _getElapsedFrames();
 	bool _getIsShiftDown();
-
-
-//	ci::params::InterfaceGl		_params;
-	ci::gl::Texture				_splashScreen;
-	ci::gl::Texture				_instructionsWhite;
-	ci::gl::Texture				_instructionsBlack;
 	
-	ci::Vec2f					_mousePosition;
-	ci::Colorf					_clearColor;
-	ci::Perlin					_perlinNoise;
+	ci::Vec2f						_mousePosition;
+	ci::Perlin						_perlinNoise;
 	std::vector<linePointer>		_lines;
 	
 	// STATES
+	ColorModes::ColorStateManager _colorStateManager;
+	std::map<char, ColorModes::IColorMode*> _colorMap;
+
 	int		_state;
 	bool	_drawLines;
 	bool	_drawParams;
@@ -142,7 +148,7 @@ public:
 	float	_brushRadius;
 	float	_canvasFrictionMin;
 	float	_canvasFrictionMax;
-	int		_colorMode;
+//	int		_colorMode;
 
 	// Version checking
 	float				_versionNumber;
@@ -158,55 +164,3 @@ public:
 	float __RGB_ALPHA;
 #endif
 };
-
-
-inline void HSVtoRGB( float *r, float *g, float *b, float h, float s, float v )
-{
-	int i;
-	float f, p, q, t;
-	if( s == 0 ) {
-		// achromatic (grey)
-		*r = *g = *b = v;
-		return;
-	}
-	h /= 60;			// sector 0 to 5
-	i = floor( h );
-	f = h - i;			// factorial part of h
-	p = v * ( 1 - s );
-	q = v * ( 1 - s * f );
-	t = v * ( 1 - s * ( 1 - f ) );
-	
-	switch( i )
-	{
-		case 0:
-			*r = v;
-			*g = t;
-			*b = p;
-			break;
-		case 1:
-			*r = q;
-			*g = v;
-			*b = p;
-			break;
-		case 2:
-			*r = p;
-			*g = v;
-			*b = t;
-			break;
-		case 3:
-			*r = p;
-			*g = q;
-			*b = v;
-			break;
-		case 4:
-			*r = t;
-			*g = p;
-			*b = v;
-			break;
-		default:		// case 5:
-			*r = v;
-			*g = p;
-			*b = q;
-			break;
-	}
-}
